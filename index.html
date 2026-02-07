@@ -607,7 +607,7 @@
 
                 // ✅ FORCE autoplay when Step 6 is shown
                 if (stepNumber === 6) {
-                    const video = document.getElementById('friendsVideo');
+                    const video = document.getElementById('appaVideo');
                     if (video) {
                         video.currentTime = 0;   // restart
                         video.muted = true;      // required by browser
@@ -622,22 +622,18 @@
                 currentStep = 2;
                 showStep(currentStep);
             });
-
             document.getElementById('next-btn-2').addEventListener('click', () => {
                 currentStep = 3;
                 showStep(currentStep);
             });
-
             document.getElementById('next-btn-3').addEventListener('click', () => {
                 currentStep = 4;
                 showStep(currentStep);
             });
-
             document.getElementById('next-btn-4').addEventListener('click', () => {
                 currentStep = 5;
                 showStep(currentStep);
             });
-            
             document.getElementById('next-btn-5').addEventListener('click', () => {
                 currentStep = 6;
                 showStep(currentStep);
