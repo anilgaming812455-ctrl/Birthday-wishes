@@ -619,20 +619,20 @@
                 if (stepNumber === 7) {
                     const video = document.getElementById('appaVideo');
                     if (video) {
-                        video.currentTime = 0;
-                        video.muted = true;
-                        video.play().catch(() => {});
-                        document.getElementById('appaVideo').addEventListener('click', e => {
-                        e.target.muted = false;
+                        video.currentTime = 0;   // restart
+                        video.muted = true;      // required by browser
+                        video.play().catch(err => {
+                             console.log('autoplay blocked:', err);
                         });
                     }          
                 }
                 if (stepNumber === 8) {
                     const video = document.getElementById('ammaVideo');
                     if (video) {
-                        video.currentTime = 0;
-                        video.muted = true;
-                        video.play().catch(() => {});
+                        video.currentTime = 0;   // restart
+                        video.muted = true;      // required by browser
+                        video.play().catch(err => {
+                             console.log('autoplay blocked:', err);  
                         });
                     }
                 }
