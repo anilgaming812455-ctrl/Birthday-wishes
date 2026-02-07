@@ -586,10 +586,10 @@
 
             // Step Navigation
             let currentStep = 1;
-            const totalSteps = 8;
+            const totalSteps = 6;
 
             function updateProgressBar() {
-                const progress = ((currentStep - 1) / (totalSteps - 8)) * 100;
+                const progress = ((currentStep - 1) / (totalSteps - 6)) * 100;
                 document.getElementById('progress-bar').style.width = `${progress}%`;
             }
 
@@ -616,27 +616,7 @@
                         });
                     }
                 }
-                if (stepNumber === 7) {
-                    const video = document.getElementById('appaVideo');
-                    if (video) {
-                        video.currentTime = 0;   // restart
-                        video.muted = true;      // required by browser
-                        video.play().catch(err => {
-                             console.log('autoplay blocked:', err);
-                        });
-                    }          
-                }
-                if (stepNumber === 8) {
-                    const video = document.getElementById('ammaVideo');
-                    if (video) {
-                        video.currentTime = 0;   // restart
-                        video.muted = true;      // required by browser
-                        video.play().catch(err => {
-                             console.log('autoplay blocked:', err);  
-                        });
-                    }
-                }
-            
+                
             // Button event listeners
             document.getElementById('start-btn').addEventListener('click', () => {
                 currentStep = 2;
@@ -660,16 +640,6 @@
             
             document.getElementById('next-btn-5').addEventListener('click', () => {
                 currentStep = 6;
-                showStep(currentStep);
-            });
-            
-            document.getElementById('next-btn-6').addEventListener('click', () => {
-                currentStep = 7;
-                showStep(currentStep);
-            });
-            
-            document.getElementById('next-btn-7').addEventListener('click', () => {
-                currentStep = 8;
                 showStep(currentStep);
             });
 
